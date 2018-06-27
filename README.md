@@ -15,7 +15,7 @@ Note: For more information on FashionMNIST, kindly visit "https://github.com/zal
 The proposed model consist of 5 Convolutional Neural Network layers and 2 Fully Connected (Dense) layers for classification into 10 categories.
 Indepth design is described as follows:
 ![](https://raw.githubusercontent.com/iam-sr13/QSTP2018/master/Accessories/CNNArch.JPG)
-                                          `Fig 1.0: Proposed Model Architecture`
+                                          ` **Fig 1.0: Proposed Model Architecture** `
                                           
 0. **Input Layer**
   * 1x28x28 dimensional Input Tensor
@@ -85,7 +85,7 @@ Kernel size was set to 3x3 because I noticed that most of the misclassified imag
 Dropout is a technique where randomly selected neurons are ignored during training. They are “dropped-out” randomly. This means that their contribution to the activation of downstream neurons is temporally removed on the forward pass and any weight updates are not applied to the neuron on the backward pass.
 This helped avoiding overfitting the model significantly.
 ![](https://raw.githubusercontent.com/iam-sr13/QSTP2018/master/Accessories/dropout.JPG)
-                                          `Fig 2.0: Dropout Explained`
+                                          ` **Fig 2.0: Dropout Explained** `
 
 #### Why LeakyReLU?
 Using sigmoidal neurons like Tanh first, I faced the vanishing gradient problem and learning was slow as expected. Thus changing to rectified neurons helped significantly to accelerate the learning. But ReLU units have a tendency to die oftenly i.e. they zero out whenever the input is negative. So I opted for Leaky ReLU version just to slightly decrease this zeroing out effect.
@@ -94,10 +94,11 @@ Using sigmoidal neurons like Tanh first, I faced the vanishing gradient problem 
 I chose Adam, because it converged much faster and achieved higher accuracy than any other optimizer. 
 Adam derives from “adaptive moments”, it can be seen as a variant on the combination of RMSProp and momentum, the update looks like RMSProp except that a smooth version of the gradient is used instead of the raw stochastic gradient, the full Adam update also includes a bias correction mechanism.
 ![](https://raw.githubusercontent.com/iam-sr13/QSTP2018/master/Accessories/plotadamasm.JPG)
-                                          `Fig 3.0: Using Adam`
+                                          ` **Fig 3.0: Using Adam** `
                                           
 ![](https://raw.githubusercontent.com/iam-sr13/QSTP2018/master/Accessories/plotsgd.JPG)
-                                          `Fig 4.0: Using SGD`
+                                          ` **Fig 4.0: Using SGD** `
+                                          
 As you can see that SGD is much slower than Adam and has more cost.
 Overall I believe that any adaptive moments method is better over other optimization methods.
 
