@@ -55,11 +55,13 @@ Indepth design is described as follows:
 7. **Dense/Fully Connected Layer 2 : Classification Layer**
   * 10 Neurons    
   * Softmax Activation
-  
+
+### Note:
 > * The dataset was preprocessed with normalization and augmented with random horizontal flipping
 > * The parameter initialization is He/Kaiming Normal
 > * Trained using Cross Entropy Loss over a Softmax Output
 > * Optimized using Adam algorithm
+> * The entire model was implemented using PyTorch 0.4 with Python 3.6 and trained on GTX 1080 (a Pascal-architecture based GPU) using CuDNN 7.1 with CUDA 8.0. The entire setup was executed on Windows 10 x64 and Anaconda 3 was used for managing dependencies.
 
 ## Results:
 The Max Accuracy achieved on test dataset using Adam was 94.61%. 
